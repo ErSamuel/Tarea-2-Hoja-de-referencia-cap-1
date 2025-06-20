@@ -1,0 +1,140 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+\usepackage{booktabs}
+\usepackage{setspace}
+
+\title{Hoja de referencia}
+\author{Samuel Reyna}
+
+\begin{document}
+\maketitle
+\section{Prestaciones}
+
+\subsection*{{Definición}}
+
+Cuando se afirma que un computador tiene mejores prestaciones que otro, 
+se hace referencia a la rapidez con la que completa una tarea. 
+La definición de "prestaciones" puede ser sutil, como se ilustra con la analogía de los aviones, 
+donde la "mejor" prestación puede variar si se mide por velocidad, autonomía
+ o productividad de pasajeros (capacidad multiplicada por velocidad de crucero).
+
+\subsection*{Tiempo de ejecución como métrica clave}
+La única métrica totalmente válida para evaluar las prestaciones es el tiempo de ejecución. 
+Se considera que una máquina tiene mejores prestaciones si puede completar una tarea en menos tiempo.
+
+La relación entre las prestaciones de dos máquinas (X e Y) se puede expresar con la siguiente fórmula:
+
+\subsection*{Fórmula}
+\begin{itemize}
+    \item Tiempo de ejecución Y =$T_Y$
+    \item Tiempo de ejecución x =$T_X$
+\end{itemize}
+
+
+    \begin{spacing}{3.0} 
+        \begin{center}  
+            $\displaystyle\frac{Prestaciones_X}{Prestaciones_Y}=\frac{T_Y}{T_X}$\\
+        \end{center}
+    \end{spacing}
+
+Así, si las prestaciones de una máquina X son mayores que las prestaciones de una máquina Y, se tiene:\\
+
+
+    \begin{spacing}{3.0} % 1.5 veces el espacio normal
+        \begin{center}  
+            $Prestaciones_X > Prestaciones_Y$
+
+            $\displaystyle\frac{1}{T_Y}=\frac{1}{T_X}$
+
+            $T_X > T_Y$
+        \end{center}
+    \end{spacing}
+
+    Esto significa que el tiempo de ejecución de Y es mayor que el de X, si X es más
+     rápido que Y.\\
+ Al tratar sobre el diseño de un computador, a menudo se desea relacionar
+ cuantitativamente las prestaciones de dos máquinas diferentes. Usaremos la frase
+ “X es n veces más rápida que Y” para indicar que:\\
+
+ \begin{spacing}{3.0} 
+        \begin{center}  
+            $\displaystyle\frac{Prestaciones_X}{Prestaciones_Y}=n$\\
+        \end{center}
+    \end{spacing}
+
+     Si X es n veces más rápida que Y, entonces el tiempo de ejecución de Y es n veces
+ mayor que el de X:
+ \begin{spacing}{3.0} % 1.5 veces el espacio normal
+        \begin{center}  
+            $\displaystyle\frac{Prestaciones_X}{Prestaciones_Y}=\frac{T_Y}{T_X}=n$\\
+        \end{center}
+    \end{spacing}
+
+    \section{ Prestaciones de la CPU y sus factores}
+    Frecuentemente, diseñadores y usuarios miden las prestaciones usando métricas
+ diferentes. Si se pudieran relacionar estas métricas, se podría determinar el efecto
+ de un cambio en el diseño sobre las prestaciones observadas por el usuario. Como
+ nos estamos restringiendo a las prestaciones de la CPU, la medida base de prestaciones
+  será el tiempo de ejecución de la CPU. Una fórmula sencilla que relaciona
+ las métricas más básicas (ciclos de reloj y tiempo del ciclo de reloj) con el tiempo
+ de CPU es la siguiente:
+
+ \subsection*{Fórmula}
+\begin{itemize}
+    \item Tiempo de ejecución de CPU= $T_{CPU}$
+    \item Ciclos de la CPU =$Ciclos_{CPU}$
+    \item  Tiempo del ciclo del reloj = $T_{cicloR}$
+    \item Frecuencia del reloj: $Frecuencia$
+\end{itemize}
+
+\begin{spacing}{3.0} % 1.5 veces el espacio normal
+        \begin{center}  
+            $T_{CPU} = Ciclos_{CPU} \times T_{cicloR}$\\
+            $T_{CPU} = \displaystyle\frac{Ciclos_{CPU}}{Frecuencia}$
+        \end{center}
+    \end{spacing}
+    
+\subsection*{ Prestaciones de las instrucciones}
+\begin{itemize}
+    \item Instrucciones de un programa =$I$
+    \item Media de instrucciones por ciclo =$CPI$
+\end{itemize}
+
+        \begin{center}  
+            $Ciclos_{CPU} = I \times CPI$
+        \end{center}
+
+         Ciclos de reloj por instrucción (CPI): número medio de ciclos de reloj 
+        por instrucción para un programa o fragmento de programa.
+        
+    \section{La ecuación clásica de las prestaciones de la CPU}
+    Ahora se puede escribir la ecuación básica de las prestaciones en términos del
+    número de instrucciones (número de instrucciones ejecutadas por el programa),
+    del CPI y del tiempo de ciclo:
+    
+    \subsection*{Fórmula}
+    \begin{itemize}
+        \item Tiempo de ejecución = $T_{EXE}$
+        \item Número de instrucciones = $N_{Inst}$
+        \item Tiempo de ciclo = $T_{ciclo}$
+    \end{itemize}
+
+    \begin{spacing}{3.0} % 1.5 veces el espacio normal
+        \begin{center}  
+            $T_{EXE} = N_{Inst} \times T_{ciclo} \times CPI$ \\
+            $T_{EXE} = \displaystyle\frac{I \times CPI}{Frecuencia}$
+        \end{center}
+    \end{spacing}
+
+    Número de instrucciones: número de instrucciones ejecutadas por el 
+    programa.
+
+      
+      \begin{center}  
+            Ciclos de reloj de la CPU = $\sum_{i=1}^{n}(CPI_i \times I_i)$
+        \end{center}
+\end{document} 
